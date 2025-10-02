@@ -2,6 +2,9 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/header.css">
     <title>Document</title>
@@ -12,12 +15,14 @@
 </html>
 
 <header>
-    <h1>Lojinha</h1>
+    <div class="logo">
+        <img src="logo" alt="">
+    </div>
     <nav>
-        <a href="#">teste 1</a>
-        <a href="#">teste 2</a>
-        <a href="#">teste 3</a>
-        <a href="#">teste 4</a>
-        <a href="#">produtos</a>
+        <a href="#">Teste 1</a>
+        <a href="#">Teste 2</a>
+        <a href="#">Teste 3</a>
+        <a href="#">Teste 4</a>
+        <a href="#">Produtos</a>
     </nav>
 </header>
