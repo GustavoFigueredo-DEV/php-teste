@@ -16,10 +16,10 @@
 
 <header>
     <div class="logo">
-        <img src="logo" alt="">
+        <img src="./assets/imgs/logoV2.png" alt="">
     </div>
     <nav>
-        <a href="#">Teste 1</a>
+        <a href="http://localhost:3000/index.php">Teste 1</a>
         <a href="#">Teste 2</a>
         <a href="#">Teste 3</a>
         <a href="#">Teste 4</a>

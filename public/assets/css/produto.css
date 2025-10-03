@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cardContainer{
+    padding: 20px 40px;
+}
+
+.produtoCard{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 4px;
+    padding: 20px;
+
+    img{
+        height: 300px;
+    }
+}
+
+.produtoInfoContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: "Poppins", sans-serif;
+    justify-content: space-around;
+}
+
+.nomeCategoria{
+    
+}
+
+.nomeText{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.descriptionText{
+    font-size: 20px;
+}
+
+.priceText{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.buyButton{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
