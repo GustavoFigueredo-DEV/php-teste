@@ -1,10 +1,18 @@
-<?php include "../app/data/produtos.php";
+<?php
+// Caminho correto e seguro:
+include __DIR__ . '/../app/data/produtos.php';
+
 $id = $_GET["id"] ?? null;
 
+// Garante que $produtos é um array
+if (!isset($produtos) || !is_array($produtos)) {
+    $produtos = [];
+}
+
 $produtoSelecionado = null;
-for ($i = 0; $i < count(value: $produtos); $i++) {
-    if ($produtos[$i]->id == $id) {
-        $produtoSelecionado = $produtos[$i];
+foreach ($produtos as $produto) {
+    if ($produto->id == $id) {
+        $produtoSelecionado = $produto;
         break;
     }
 }
@@ -19,49 +27,49 @@ for ($i = 0; $i < count(value: $produtos); $i++) {
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
     <link rel="stylesheet" href="./assets/css/produto.css">
-    <title>YStore | <?= $produtoSelecionado->nome ?
-                        $produtoSelecionado->nome : "produto não encontrado" ?>
+    <title>
+        YStore | <?= $produtoSelecionado ? $produtoSelecionado->nome : "Produto não encontrado" ?>
     </title>
 </head>
 
 <body>
-    <?php
-    include __DIR__ . '/../app/components/header.php';
-    ?>
-    <?php if ($produtoSelecionado): ?>
-        <div class="cardContainer">
-            <div class="produtoCard">
-                <div class="produtoImg">
-                    <img src="<?= $produtoSelecionado->imagem ?>" alt="">
-                </div>
-                <div class="produtoInfoContainer">
-                    <div class="nomeCategoria">
-                    <p class="nomeText"><?= $produtoSelecionado->nome ?></p>
-                    <p><?= $produtoSelecionado->categoria ?></p>
-                    </div>
-                    <p class="descriptionText"><?= $produtoSelecionado->descricao ?></p>
-                   
-                    <p>Disponível: <?= $produtoSelecionado->estoque ?></p>
-                    
-                    <p><?= $produtoSelecionado->marca ?></p>
-                     <p class="priceText">R$ <?= $produtoSelecionado->preco ?>,00</p>
+    <?php include __DIR__ . '/../app/components/header.php'; ?>
 
-                     <div>
-                    <button class="buyButton">
-                        Comprar
-                    </button>
-                </div>
-                </div>
-                
+    <?php if ($produtoSelecionado): ?>
+        <div class="container">
+        <div class="produtoCard">
+            <div class="imageContainer">
+                <img src="<?= $produtoSelecionado -> imagem?>" alt="">
             </div>
+
+            <div class="produtoInfo">
+                <div class="categoriaContainer">
+                    <img src="./assets/imgs/categoriaIcon.png" alt="">
+                    <p><?= $produtoSelecionado -> categoria ?></p>
+                </div>
+
+                <h1 class="produtoNome"><?= $produtoSelecionado -> nome?></h1>
+                <p class="produtoMarca">Marca: <?= $produtoSelecionado -> marca?></p>
+                <p class="produtoDescricao"><?= $produtoSelecionado -> descricao?></p>
+
+                <div class="produtoEstoque">
+                    <p><?= $produtoSelecionado -> estoque?> unidades em estoque</p>
+                </div>
+
+                <div class="linha">
+                    <p class="produtoPreco">Preço</p>
+                    <h1>R$ <?= $produtoSelecionado -> preco?>,00</h1>
+                </div>
+
+                <button class="comprarBtn">Comprar</button>
+            </div>
+        </div>
         </div>
     <?php else: ?>
         <h1>Produto não encontrado</h1>
     <?php endif ?>
-    <?php
-    include __DIR__ . '/../app/components/footer.php';
-    ?>
-</body>
 
+    <?php include __DIR__ . '/../app/components/footer.php'; ?>
+</body>
 
 </html>

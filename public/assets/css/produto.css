@@ -4,55 +4,93 @@
     box-sizing: border-box;
 }
 
-.cardContainer{
-    padding: 20px 40px;
+.container {
+    display: flex;
+    justify-content: center;
+    font-family: "Lato", sans-serif;
 }
 
-.produtoCard{
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    width: 100%;
+.produtoCard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+    height: 90%;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    border-radius: 4px;
-    padding: 20px;
+    border-radius: 5px;
+    padding: 30px;
+    gap: 16px;
+}
 
-    img{
-        height: 300px;
+.imageContainer {
+    img {
+        height: 550px;
+        width: 100%;
     }
 }
 
-.produtoInfoContainer{
+.produtoInfo {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    font-family: "Poppins", sans-serif;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 10px;
 }
 
-.nomeCategoria{
-    
+.categoriaContainer {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+
+    img {
+        height: 20px;
+    }
+
+    p {
+        font-weight: 700;
+    }
 }
 
-.nomeText{
+.produtoNome{
     font-size: 40px;
-    font-weight: 600;
 }
 
-.descriptionText{
+.produtoMarca{
     font-size: 20px;
 }
 
-.priceText{
-    font-size: 30px;
-    font-weight: 600;
+.produtoDescricao{
+    font-size: 18px;
 }
 
-.buyButton{
-    width: 100%;
-    padding: 10px;
+.produtoEstoque{
+    p{
+        text-align: center;
+        width: 200px;
+        background-color: rgb(165, 255, 165);
+        color: rgb(0, 141, 12);
+        border-radius: 20px;
+        padding: 4px;
+        font-weight: 600;
+    }
+}
+
+.linha {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #999999;
+    padding-top: 20px;
+    gap: 5px;
+
+    p {
+        font-size: 18px;
+    }
+}
+
+.comprarBtn {
     border: none;
-    font-size: 16px;
+    padding: 12pX;
+    border-radius: 5px;
+    color: white;
+    background-color: #000;
+    font-size: 18px;
     cursor: pointer;
-    border-radius: 4px;
 }
